@@ -67,6 +67,17 @@ def set_test_dir(directory):
     TEST_DIR = directory
     FULL_HEIGHT, FULL_WIDTH = get_test_frame_dims()
 
+def set_clips_dir(directory):
+    """
+    Edits all constants dependent on CLIPS_DIR.
+
+    @param directory: The new clips directory.
+    """
+    global TRAIN_DIR_CLIPS, NUM_CLIPS
+
+    TRAIN_DIR_CLIPS = directory
+    NUM_CLIPS = len(glob(TRAIN_DIR_CLIPS + '*'))
+
 # root directory for all data
 DATA_DIR = get_dir('../Data/')
 # directory of unprocessed training frames
